@@ -29,6 +29,3 @@ class GeneralMemberAdmin(admin.ModelAdmin):
 	list_display = [field.name for field in GeneralMember._meta.fields]
 
 
-# @admin.register(FeeGeneration)
-# class FeeGeneration(admin.ModelAdmin):
-# 	list_display = [field.name for field in FeeGeneration._meta.fields]

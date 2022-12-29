@@ -228,9 +228,3 @@ class GeneralMemberSerializer(serializers.ModelSerializer):
 		return modelObject
 
 
-# class FeeGenerationSerializer(serializers.ModelSerializer):
-# 	class Meta:
-# 		model = FeeGeneration
-# 		fields = '__all__'
-class FeeGenerationSerializer:
-	pass

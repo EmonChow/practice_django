@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'donation.apps.DonationConfig',
     'site_settings.apps.SiteSettingsConfig',
     'support.apps.SupportConfig',
-    'fee_generation'
+    'fee_generation',
+    'department'
 ]
 
 INSTALLED_APPS += ['sequences.apps.SequencesConfig']

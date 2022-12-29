@@ -6,7 +6,6 @@ from member.models import Member
 # Create your models here.
 
 
-
 class FeeGeneration(models.Model):
     member = models.OneToOneField(Member, on_delete=models.CASCADE, related_name='fee_generation')
     date = models.DateTimeField()

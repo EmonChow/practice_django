@@ -1,6 +1,6 @@
 from django.urls import path
 from fee_generation import views
-# from fee_generation.views import fee_generation_views as views
+
 
 urlpatterns = [
     path('api/v1/fee_generation/all/', views.getAllFeeGeneration),

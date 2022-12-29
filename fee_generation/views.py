@@ -84,7 +84,6 @@ def createFeeGeneration(request):
 @extend_schema(request=FeeGenerationSerializer, responses=FeeGenerationSerializer)
 @api_view(['PUT'])
 def updateFeeGenerator(request, pk):
-
     data = request.data
     print('data :', data)
     filtered_data = {}
