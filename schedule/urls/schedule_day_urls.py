@@ -9,3 +9,5 @@ urlpatterns = [
     path('api/update_schedule_day/<int:pk>', schedule_day_views.updateScheduleDay),
     path('api/delete_schedule_day/<int:pk>', schedule_day_views.deleteScheduleday)
 ]
+
+

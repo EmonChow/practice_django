@@ -22,7 +22,7 @@ class ScheduleDay(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     time_slot = models.PositiveIntegerField()
-    schedule_id = models.ForeignKey(Schedule, on_delete=models.CASCADE)
+    schedule_id = models.ForeignKey(Schedule, on_delete=models.CASCADE, related_name='schedule_day')
 
     def __str__(self):
         return str(self.day)
