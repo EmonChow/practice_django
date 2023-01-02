@@ -27,6 +27,7 @@ def ScheduleDays(request):
     schedule_day_pagination = pagination.paginate_data(schedules_day)
     serializer = ScheduleDaysSerializer(schedule_day_pagination)
     response = {
+
         'schedule_days': serializer.data,
         'total_element': total_elements,
         'total_page': schedule_day_pagination,
