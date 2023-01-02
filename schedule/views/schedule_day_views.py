@@ -17,15 +17,15 @@ from schedule.serializer import ScheduleDaysSerializer
 def ScheduleDays(request):
     schedules_day = ScheduleDay.objects.all()
     total_elements = schedules_day.count()
-    serializer = ScheduleDaysSerializer(schedules_day)
-    page = schedules_day.query_params.get('page')
-    size = schedules_day.query_params.get('size')
+
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
     pagination = Pagination()
     pagination.page = page
     pagination.size = size
-    schedule_day_pagination = pagination.paginate_data(pagination)
-
+    schedule_day_pagination = pagination.paginate_data(schedules_day)
+    serializer = ScheduleDaysSerializer(schedule_day_pagination)
     response = {
         'schedule_days': serializer.data,
         'total_element': total_elements,

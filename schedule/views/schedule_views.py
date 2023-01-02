@@ -23,8 +23,8 @@ from schedule.serializer import ScheduleSerializer
 def allSchedule(request):
     schedules = Schedule.objects.all()
     total_elements = schedules.count()
-    page = schedules.query_params.get('page'),
-    size = schedules.query_params.get('size'),
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
         # Pagination
 
@@ -32,11 +32,11 @@ def allSchedule(request):
     pagination.page = page
     pagination.size = size
     schedule_pagination = pagination.paginate_data(schedules)
-    serializer = ScheduleSerializer(schedules, many=True)
+    serializer = ScheduleSerializer(schedule_pagination, many=True)
     response = {
         "schedules": serializer.data,
         "total_elements": total_elements,
-        "schedule_pagination": schedule_pagination,
+        "schedule_pagination": pagination.total_pages,
         "page": page,
         "size": size
     }
