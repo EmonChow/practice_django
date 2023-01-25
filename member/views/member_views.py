@@ -1,4 +1,6 @@
 from ast import keyword
+
+import requests
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 from django.db.models import Q
@@ -10,6 +12,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
+from sms import send_sms
 
 from account.models import Group, LedgerAccount
 from authentication.serializers import AdminUserMinimalListSerializer
@@ -165,10 +168,10 @@ def createMember(request):
 	serializer = MemberSerializer(data=filtered_data)
 	if serializer.is_valid():
 		serializer.save()
-		group_obj = Group.objects.get(name='Sundry Creditors')
-		id = serializer.data['id']
-		username = serializer.data['username']
-		LedgerAccount.objects.create(name=username, reference_id=id, ledger_type='member_ledger', head_group=group_obj)
+		# group_obj = Group.objects.get(name='Sundry Creditors')
+		# id = serializer.data['id']
+		# username = serializer.data['username']
+		# LedgerAccount.objects.create(name=username, reference_id=id, ledger_type='member_ledger', head_group=group_obj)
 		return Response(serializer.data, status=status.HTTP_201_CREATED)
 	else:
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

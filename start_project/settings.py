@@ -59,8 +59,8 @@ INSTALLED_APPS = [
     'site_settings.apps.SiteSettingsConfig',
     'support.apps.SupportConfig',
     'fee_generation',
-    'department',
-    'schedule'
+    'member'
+
 ]
 
 INSTALLED_APPS += ['sequences.apps.SequencesConfig']

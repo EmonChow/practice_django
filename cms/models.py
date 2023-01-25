@@ -11,7 +11,6 @@ from django.conf import settings
 class CMSMenu(models.Model):
     parent = models.ForeignKey('self', on_delete=models.PROTECT, related_name='children', null=True, blank=True)
     name = models.CharField(max_length=255)
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

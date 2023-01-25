@@ -11,7 +11,7 @@ urlpatterns = [
 
 	path('api/v1/cms_menu/get_all_nested_cms_menu/', views.getAllNestedCMSMenu),
 
-	path('api/v1/cms_menu/get_all_menu_content_and_image_by_cms_menu_id/<int:menu_id>', views.getAllCMSMenuContentAndImageByMenuId),
+	# path('api/v1/cms_menu/get_all_menu_content_and_image_by_cms_menu_id/<int:menu_id>', views.getAllCMSMenuContentAndImageByMenuId),
 
 	path('api/v1/cms_menu/<int:pk>', views.getACMSMenu),
 
@@ -20,4 +20,6 @@ urlpatterns = [
 	path('api/v1/cms_menu/update/<int:pk>', views.updateCMSMenu),
 	
 	path('api/v1/cms_menu/delete/<int:pk>', views.deleteCMSMenu),
+    path('api/v1/cms_menu/get_all_menu_content_and_image_by_cms_menu_id/<int:menu_id>', views.getAllCMSMenuContentAndImageByMenuId),
 ]
+

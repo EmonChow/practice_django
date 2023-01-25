@@ -1,4 +1,5 @@
-from django.conf import settings 
+import requests
+from django.conf import settings
 from django.db import models
 
 from authentication.models import User

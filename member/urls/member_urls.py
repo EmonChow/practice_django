@@ -20,4 +20,6 @@ urlpatterns = [
 	
 	path('api/v1/member/delete/<int:pk>', views.deleteMember),
 
+    path('api/v1/member/delete/<int:pk>', views.deleteMember),
+
 ]

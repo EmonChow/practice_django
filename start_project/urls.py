@@ -76,9 +76,6 @@ urlpatterns = [
     # Fee Generation Module
     # path('member_fee_generation/', include('member.urls.fee_generation_urls')),
     path('fee_generation/', include('fee_generation.urls')),
-    path('department/', include('department.urls')),
-    path('schedule/', include('schedule.urls.schedule_urls')),
-    path('schedule_day/', include('schedule.urls.schedule_day_urls')),
 
     # Support module
     path('ticket_department/', include('support.urls.ticket_department_urls')),

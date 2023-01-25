@@ -20,3 +20,4 @@ urlpatterns = [
 	path('api/v1/monthly_subscription/delete/<int:pk>', views.deleteMonthlySubscription),
 
 ]
+

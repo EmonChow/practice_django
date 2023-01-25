@@ -65,7 +65,6 @@ class MemberSerializer(serializers.ModelSerializer):
 
 
 
-
 class ExecutiveMemberListSerializer(serializers.ModelSerializer):
 	created_by = serializers.SerializerMethodField(read_only=True)
 	updated_by = serializers.SerializerMethodField(read_only=True)
@@ -94,6 +93,10 @@ class ExecutiveMemberListSerializer(serializers.ModelSerializer):
 		return obj.updated_by.email if obj.updated_by else obj.updated_by
 
 
+class ExcutiveMinimalMemberListSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = ExecutiveMember
+		fields = ['id', 'name']
 
 
 class ExecutiveMemberSerializer(serializers.ModelSerializer):
