@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'site_settings.apps.SiteSettingsConfig',
     'support.apps.SupportConfig',
     'fee_generation',
-    'member'
+
 
 ]
 

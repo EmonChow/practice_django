@@ -359,15 +359,7 @@ class User(AbstractBaseUser):
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
-    def auto_username(instance, **kwargs):
-        random_number = "".join([random.choice(string.digits) for _ in range(4)])
-        username = f"{random_number}_".join([instance.first_name, instance.last_name])
-        instance.username = username
-        return instance
-    models.signals.pre_save.connect(auto_username)
-    #     instance.username = username
-    # return instance
-    # models.signals.pre_save.connect(auto_username, sender=User)
+
 
 
 class Department(models.Model):
